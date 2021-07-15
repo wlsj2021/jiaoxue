@@ -10,7 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jiaoxue">
-        <activity android:name=".WelActivity"></activity>
+        <activity android:name=".RegisterActivity">
+            <intent-filter>
+                <data
+                    android:host="m.bawei.com"
+                    android:scheme="arouter"/>
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".WelActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

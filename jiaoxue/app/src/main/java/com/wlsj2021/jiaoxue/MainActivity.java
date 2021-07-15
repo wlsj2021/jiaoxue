@@ -2,6 +2,7 @@ package com.wlsj2021.jiaoxue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,8 +49,33 @@ public class MainActivity extends AppCompatActivity {
     public void btn2(View view) {
         ARouter.getInstance().build("/app/activity")
                 .withLong("key1", 666L)
-                .withString("key3", "888")
+                .withString("key3", "88888888888888888888")
 //                .withObject("key4", new Test("Jack", "Rose"))
-                .navigation();
+                .navigation(this, new NavigationCallback() {
+                    @Override
+                    public void onFound(Postcard postcard) {
+                        Log.e("55555", "onFound: "+postcard,null );
+
+                    }
+
+                    @Override
+                    public void onLost(Postcard postcard) {
+
+                    }
+
+                    @Override
+                    public void onArrival(Postcard postcard) {
+
+                    }
+
+                    @Override
+                    public void onInterrupt(Postcard postcard) {
+
+                    }
+                });
+    }
+
+    public void btn3(View view) {
+    ARouter.getInstance().build("m.bawei.com").navigation();
     }
 }
