@@ -11,7 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 @Route(path = "/app/activity")
 public class WelActivity extends AppCompatActivity {
-
+    //接收第一步
     @Autowired
     String key3;
 
@@ -19,6 +19,7 @@ public class WelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wel);
+        //接收第二步
         ARouter.getInstance().inject(this);
 
         Toast.makeText(this, "在？？？？？？？？？？------------- "+key3, Toast.LENGTH_SHORT).show();

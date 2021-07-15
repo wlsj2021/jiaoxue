@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn2(View view) {
         ARouter.getInstance().build("/app/activity")
-                .withLong("key1", 666L)
+                .withLong("name", 666L)
                 .withString("key3", "88888888888888888888")
 //                .withObject("key4", new Test("Jack", "Rose"))
                 .navigation(this, new NavigationCallback() {
