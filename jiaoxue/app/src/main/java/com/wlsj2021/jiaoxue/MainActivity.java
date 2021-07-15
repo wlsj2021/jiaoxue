@@ -2,6 +2,7 @@ package com.wlsj2021.jiaoxue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,12 +12,20 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import java.lang.ref.WeakReference;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+    static WeakReference<Activity> weakReference ;
+
+    public static WeakReference<Activity> getWeakReference() {
+        return weakReference;
     }
 
     public void btn(View view) {
@@ -74,8 +83,28 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
+//greenChannel().
     public void btn3(View view) {
-    ARouter.getInstance().build("m.bawei.com").navigation();
+    ARouter.getInstance().build("/app/lj").navigation(this, new NavigationCallback() {
+        @Override
+        public void onFound(Postcard postcard) {
+        }
+
+        @Override
+        public void onLost(Postcard postcard) {
+            Log.e("TAG", "onFound: "+postcard,null );
+
+        }
+
+        @Override
+        public void onArrival(Postcard postcard) {
+
+        }
+
+        @Override
+        public void onInterrupt(Postcard postcard) {
+
+        }
+    });
     }
 }
