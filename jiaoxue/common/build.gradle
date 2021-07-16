@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -7,18 +7,13 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.wlsj2021.jiaoxue"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        //Arouter添加的第二步
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -37,12 +32,10 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation project(path: ':common')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-//Arouter第一步
+    //Arouter第一步
     implementation 'com.alibaba:arouter-api:1.5.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 //butter knife 绑定控件
@@ -79,6 +72,5 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.35.1'
     // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.35.1'
-
 
 }

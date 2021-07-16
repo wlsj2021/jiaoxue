@@ -1,4 +1,4 @@
-package com.wlsj2021.jiaoxue;
+package com.wlsj2021.common;
 
 import android.app.Application;
 import android.content.res.Configuration;

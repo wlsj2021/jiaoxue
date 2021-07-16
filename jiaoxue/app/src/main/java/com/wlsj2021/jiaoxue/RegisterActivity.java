@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-
+//注册
 public class RegisterActivity extends AppCompatActivity {
 
     @Override

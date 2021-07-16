@@ -13,7 +13,7 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Interceptor;
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
-
+//ARouter拦截器
 @Interceptor(priority = 1, name = "TestInterceptor")
 public class TestInterceptor implements IInterceptor {
     public static final String INTERCEPTOR = "/app/lj";
