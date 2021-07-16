@@ -2,25 +2,41 @@ package com.wlsj2021.jiaoxue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.wlsj2021.jiaoxue.presenter.MsgPresenter;
+import com.wlsj2021.jiaoxue.presenter.MsgPresenterImL;
+import com.wlsj2021.jiaoxue.view.MsgView;
 
 import java.lang.ref.WeakReference;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+//7 8
+public class MainActivity extends AppCompatActivity implements MsgView {
+
+    private MsgPresenter msgPresenter;
+@SuppressLint("NonConstantResourceId")
+@BindView(R.id.button)
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
+        msgPresenter = new MsgPresenterImL(this);
     }
     static WeakReference<Activity> weakReference ;
 
@@ -28,32 +44,19 @@ public class MainActivity extends AppCompatActivity {
         return weakReference;
     }
 
-    public void btn(View view) {
-        ARouter.getInstance().build("/app/activity").navigation(this, new NavigationCallback() {
-            @Override
-            public void onFound(Postcard postcard) {
-                Log.e("111111", "onFound: "+postcard+"成功",null );
-            }
-
-            @Override
-            public void onLost(Postcard postcard) {
-                Log.e("22222", "onFound: "+postcard+"失败",null );
-
-            }
-
-            @Override
-            public void onArrival(Postcard postcard) {
-                Log.e("33333", "onFound: "+postcard,null );
-
-            }
-
-            @Override
-            public void onInterrupt(Postcard postcard) {
-                Log.e("44444", "onFound: "+postcard,null );
-
-            }
-        });
+    @OnClick(R.id.button2)
+    public void btn2(){
+        button.setText("第一个按钮");
+        msgPresenter.sendMsg("ss");
     }
+
+
+
+
+    public void btn(View view) {
+        ARouter.getInstance().build("/app/activity").withDouble("dou",8).navigation();
+    }
+
 
     public void btn2(View view) {
         ARouter.getInstance().build("/app/activity")
@@ -106,5 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     });
+    }
+
+    @Override
+    public void msg(String msg) {
+
     }
 }

@@ -19,6 +19,7 @@ public class MyApp extends Application {
 
         ARouter.openDebug();
         ARouter.openLog();
+        //ARouter第三步
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
     }
 

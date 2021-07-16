@@ -15,6 +15,9 @@ public class WelActivity extends AppCompatActivity {
     @Autowired
     String key3;
 
+    @Autowired
+    Double dou;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,6 @@ public class WelActivity extends AppCompatActivity {
         //接收第二步
         ARouter.getInstance().inject(this);
 
-        Toast.makeText(this, "在？？？？？？？？？？------------- "+key3, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "在？？？？？？？？？？------------- "+key3+dou, Toast.LENGTH_SHORT).show();
     }
 }
