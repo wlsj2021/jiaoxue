@@ -24,7 +24,7 @@ public class MsgPresenterImL implements MsgPresenter, MsgListener {
 
     @Override
     public void success() {
-
+msgModel.sendMsg("3",this);
     }
 
     @Override

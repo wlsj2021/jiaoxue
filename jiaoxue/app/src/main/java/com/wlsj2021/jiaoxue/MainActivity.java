@@ -27,10 +27,16 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 //7 8
 public class MainActivity extends AppCompatActivity implements MsgView {
-    //添加注入
+    //4等编译完添加注入
+//    @Inject
+//    Test test;
+
     @Inject
-    Test test;
+    Test2 test2;
+//8
     private MsgPresenter msgPresenter;
+
+
 @SuppressLint("NonConstantResourceId")
 @BindView(R.id.button)
     Button button;
@@ -40,11 +46,13 @@ public class MainActivity extends AppCompatActivity implements MsgView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        //使用自动生成的注入Component
-        DaggerTestComponent.create().inject(this);
+        //5等编译完使用自动生成的注入Component
+        DaggerTest2Component.create().inject(this);
+//        DaggerTest2Component.create().inject(this);
+//        DaggerTestComponent.create().inject(this);
 
-        Toast.makeText(this, "----------------"+test, Toast.LENGTH_SHORT).show();
-        Log.e("TAG", "onCreate: "+test,null );
+//        Toast.makeText(this, "----------------"+test, Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onCreate: "+test2,null );
 
         msgPresenter = new MsgPresenterImL(this);
     }
@@ -123,6 +131,6 @@ public class MainActivity extends AppCompatActivity implements MsgView {
 
     @Override
     public void msg(String msg) {
-
+        msgPresenter.sendMsg(msg);
     }
 }

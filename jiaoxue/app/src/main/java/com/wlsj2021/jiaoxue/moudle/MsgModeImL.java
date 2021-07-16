@@ -5,6 +5,6 @@ import com.wlsj2021.jiaoxue.MsgListener;
 public class MsgModeImL implements MsgModel {
     @Override
     public void sendMsg(String msg, MsgListener msgListener) {
-
+//网络
     }
 }
