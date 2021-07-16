@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
@@ -19,12 +20,16 @@ import com.wlsj2021.jiaoxue.view.MsgView;
 
 import java.lang.ref.WeakReference;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 //7 8
 public class MainActivity extends AppCompatActivity implements MsgView {
-
+    //添加注入
+    @Inject
+    Test test;
     private MsgPresenter msgPresenter;
 @SuppressLint("NonConstantResourceId")
 @BindView(R.id.button)
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity implements MsgView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        //使用自动生成的注入Component
+        DaggerTestComponent.create().inject(this);
+
+        Toast.makeText(this, "----------------"+test, Toast.LENGTH_SHORT).show();
+        Log.e("TAG", "onCreate: "+test,null );
 
         msgPresenter = new MsgPresenterImL(this);
     }

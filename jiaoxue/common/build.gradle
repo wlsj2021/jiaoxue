@@ -14,6 +14,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        //Arouter添加的第二步
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -38,34 +45,34 @@ dependencies {
     //Arouter第一步
     implementation 'com.alibaba:arouter-api:1.5.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
-//butter knife 绑定控件
-    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
-
-
-    implementation "androidx.core:core-ktx:+"
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-
-    implementation 'io.reactivex:rxjava:1.3.8'
-    implementation 'io.reactivex:rxandroid:1.1.0'
-
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
-
-    api "com.google.android.material:material:$rootProject.ext.material"
-    api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
-    api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
-    api "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
-    api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
-    api "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
-    api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
-
-    // 空气面板
-//    api "net.qiujuer.widget:airpane:$rootProject.ext.airpanelVersion"
-    // Lame 录音 MP3 转码器
-    api "net.qiujuer.lame:lame:$rootProject.ext.lameVersion"
+////butter knife 绑定控件
+//    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+//    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+//
+//
+//    implementation "androidx.core:core-ktx:+"
+////    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//
+//    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+//    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//
+//    implementation 'io.reactivex:rxjava:1.3.8'
+//    implementation 'io.reactivex:rxandroid:1.1.0'
+//
+//    implementation 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
+//
+//    api "com.google.android.material:material:$rootProject.ext.material"
+//    api "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+//    api "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+//    api "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+//    api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+//    api "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
+//    api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+//
+//    // 空气面板
+////    api "net.qiujuer.widget:airpane:$rootProject.ext.airpanelVersion"
+//    // Lame 录音 MP3 转码器
+//    api "net.qiujuer.lame:lame:$rootProject.ext.lameVersion"
 
     annotationProcessor 'com.google.dagger:dagger-compiler:2.35.1'
     implementation 'com.google.dagger:dagger-android:2.35.1'
