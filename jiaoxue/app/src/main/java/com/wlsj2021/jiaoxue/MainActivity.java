@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements MsgView {
     @OnClick(R.id.button2)
     public void btn2(){
         button.setText("第一个按钮");
-        msgPresenter.sendMsg("ss");
     }
 
 
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements MsgView {
     }
 
     @Override
-    public void msg(String msg) {
-        msgPresenter.sendMsg(msg);
+    public void msg() {
+
     }
 }

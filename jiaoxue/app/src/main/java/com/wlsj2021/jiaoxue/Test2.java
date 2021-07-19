@@ -3,7 +3,7 @@ package com.wlsj2021.jiaoxue;
 import javax.inject.Inject;
 
 import dagger.Module;
-import dagger.Provides;
+import dagger.Provides   ;
 
 //被注入的对象带参
 public class Test2 {

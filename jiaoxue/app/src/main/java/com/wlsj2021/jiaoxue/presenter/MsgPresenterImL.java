@@ -16,15 +16,10 @@ public class MsgPresenterImL implements MsgPresenter, MsgListener {
 
     }
 
-    @Override
-    public void sendMsg() {
-        msgView.msg("dd");
-        msgModel.sendMsg("ddd",this);
-    }
+
 
     @Override
     public void success() {
-msgModel.sendMsg("3",this);
     }
 
     @Override
@@ -32,9 +27,10 @@ msgModel.sendMsg("3",this);
 
     }
 
-    @Override
-    public void sendMsg(String msg) {
 
+    @Override
+    public void login(String username, String password, String repassword) {
+        msgModel.Login(username,password,repassword,this);
     }
 
     @Override
