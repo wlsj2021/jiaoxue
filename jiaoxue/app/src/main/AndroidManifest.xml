@@ -12,28 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Jiaoxue">
+        <activity android:name=".BannerActivity">
+<intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+
+    <category android:name="android.intent.category.LAUNCHER" />
+
+</intent-filter>
+
+        </activity>
         <activity android:name=".TestActivity">
-            <intent-filter>
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-
-            </intent-filter>
 
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity">
             <intent-filter>
+
                 <data
                     android:host="m.bawei.com"
                     android:scheme="arouter" />
-
             </intent-filter>
         </activity>
         <activity android:name=".WelActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -10,7 +10,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
+import rx.Scheduler;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
+
 //4444444
 public class RegisterModelImL implements RegisterModel {
     @Override
@@ -20,11 +28,55 @@ public class RegisterModelImL implements RegisterModel {
                 =new Retrofit.Builder()
                 .baseUrl("https://www.wanandroid.com")
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
 
         TestService testService = retrofit.create(TestService.class);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        testService.register(username,password,repassword)
+//                .subscribeOn(Schedulers.newThread())
+//                .observeOn(Schedulers.io())
+//                .doOnNext(new Action1<TestEntity.DataDTO>() {
+//                    @Override
+//                    public void call(TestEntity.DataDTO dataDTO) {
+//                        //
+//                    }
+//                }).observeOn(AndroidSchedulers.mainThread()).subscribeOn(new Subscriber<TestEntity>())
+//
+//
+//
+//
+//
         Call<TestEntity.DataDTO> call =testService.register(username,password,repassword);
+
+
+
 
         call.enqueue(new Callback<TestEntity.DataDTO>() {
             @Override
