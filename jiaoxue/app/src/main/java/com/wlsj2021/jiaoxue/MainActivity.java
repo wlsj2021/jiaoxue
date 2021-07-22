@@ -27,6 +27,16 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 //7 8
 public class MainActivity extends AppCompatActivity implements MsgView {
+
+    //第一种自定义view的实现方式 继承其他的view
+    //第二种自定义view的实现方式 组合
+    //第三种自定义view的实现方式 直接继承自view 自绘
+
+
+
+
+
+
     //4等编译完添加注入
 //    @Inject
 //    Test test;

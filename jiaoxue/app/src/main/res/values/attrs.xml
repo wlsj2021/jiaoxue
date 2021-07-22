@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="appText" format="string"/>
+    <attr name="appColor" format="color"/>
+    <attr name="appSize" format="dimension"/>
+
+    <declare-styleable name="AppView">
+        <attr name="appText"/>
+        <attr name="appColor"/>
+        <attr name="appSize"/>
+
+    </declare-styleable>
+
+
+</resources>

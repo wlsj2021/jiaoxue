@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wlsj="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        wlsj:layout_constraintBottom_toBottomOf="parent"
+        wlsj:layout_constraintHorizontal_bias="0.526"
+        wlsj:layout_constraintLeft_toLeftOf="parent"
+        wlsj:layout_constraintRight_toRightOf="parent"
+        wlsj:layout_constraintTop_toTopOf="parent"
+        wlsj:layout_constraintVertical_bias="0.653" />
 
     <Button
         android:id="@+id/button"
@@ -24,12 +24,12 @@
         android:layout_height="wrap_content"
         android:onClick="btn"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
+        wlsj:layout_constraintBottom_toBottomOf="parent"
+        wlsj:layout_constraintEnd_toEndOf="parent"
+        wlsj:layout_constraintHorizontal_bias="0.498"
+        wlsj:layout_constraintStart_toStartOf="parent"
+        wlsj:layout_constraintTop_toTopOf="parent"
+        wlsj:layout_constraintVertical_bias="0.206" />
 
     <Button
         android:id="@+id/button2"
@@ -39,11 +39,11 @@
         android:layout_marginBottom="188dp"
         android:onClick="btn2"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        wlsj:layout_constraintBottom_toTopOf="@+id/textView"
+        wlsj:layout_constraintEnd_toEndOf="parent"
+        wlsj:layout_constraintHorizontal_bias="0.501"
+        wlsj:layout_constraintStart_toStartOf="parent"
+        wlsj:layout_constraintTop_toTopOf="@+id/button" />
 
     <Button
         android:onClick="btn3"
@@ -51,9 +51,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        wlsj:layout_constraintBottom_toTopOf="@+id/textView"
+        wlsj:layout_constraintEnd_toEndOf="parent"
+        wlsj:layout_constraintStart_toStartOf="parent"
+        wlsj:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <ImageView
+        android:src="@mipmap/ic_launcher_round"
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        wlsj:layout_constraintBottom_toTopOf="@+id/button"
+        wlsj:layout_constraintEnd_toEndOf="parent"
+        wlsj:layout_constraintHorizontal_bias="0.498"
+        wlsj:layout_constraintStart_toStartOf="parent"
+        wlsj:layout_constraintTop_toTopOf="parent"
+        wlsj:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <com.wlsj2021.jiaoxue.weiget.AppView
+        wlsj:appText="LLLLLLLLLLLLLLLLLL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        wlsj:layout_constraintBottom_toBottomOf="parent"
+        wlsj:layout_constraintEnd_toEndOf="parent"
+        wlsj:layout_constraintStart_toStartOf="parent"
+        wlsj:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

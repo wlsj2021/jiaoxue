@@ -27,6 +27,7 @@ import com.trello.rxlifecycle.components.RxActivity;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.wlsj2021.jiaoxue.net.CommonlyUsedEntity;
 import com.wlsj2021.jiaoxue.net.CommonlyUsedWebService;
+import com.wlsj2021.jiaoxue.weiget.AppView;
 
 import java.io.IOException;
 import java.security.acl.Permission;
@@ -57,8 +58,8 @@ import rx.schedulers.Schedulers;
 
 public class CommonlyUsedWebActivity extends RxAppCompatActivity {
 
-    @BindView(R.id.imageViewAnim)
-    ImageView mImageView;
+    @BindView(R.id.app_view)
+    AppView mAppView;
 
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
@@ -69,15 +70,15 @@ public class CommonlyUsedWebActivity extends RxAppCompatActivity {
 
 //帧动画
         AnimationDrawable animationDrawable = new AnimationDrawable();
-        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
-        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_foreground),100);
+//        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
+//        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_foreground),100);
 //        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
 //        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
 //        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
 //        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
 //        animationDrawable.addFrame(getResources().getDrawable(R.drawable.ic_launcher_background),100);
         animationDrawable.setOneShot(false);
-        mImageView.setImageDrawable(animationDrawable);
+        mAppView.setImageDrawable(animationDrawable);
 //        animationDrawable.start();
 
 //补间动画 透明 位移 旋转 缩放
@@ -152,21 +153,21 @@ public class CommonlyUsedWebActivity extends RxAppCompatActivity {
         //Alpha Red Green Blue  ARGB8888 ARGB4444  RGB565
 //属性动画 valueAnimator
         //透明
-        ObjectAnimator alphaObjectAnimator = ObjectAnimator.ofFloat(mImageView,"alpha",1f,0f,1f,0f,0.5f,1f,0.7f,0.3f);
+        ObjectAnimator alphaObjectAnimator = ObjectAnimator.ofFloat(mAppView,"alpha",1f,0f,1f,0f,0.5f,1f,0.7f,0.3f);
         alphaObjectAnimator.setInterpolator(new BounceInterpolator());
         alphaObjectAnimator.setDuration(10000);
 //        alphaObjectAnimator.start();
         //缩放
-        ObjectAnimator scaleObjectAnimator = ObjectAnimator.ofFloat(mImageView,"scaleY",1f,3f,6f,2f,1f,6f);
+        ObjectAnimator scaleObjectAnimator = ObjectAnimator.ofFloat(mAppView,"scaleY",1f,3f,6f,2f,1f,6f);
         scaleObjectAnimator.setDuration(10000);
 //        scaleObjectAnimator.start();
         //平移
-        ObjectAnimator translationObjectAnimator = ObjectAnimator.ofFloat(mImageView,"translationY",0,100,0,-100,50.0f,-100);
+        ObjectAnimator translationObjectAnimator = ObjectAnimator.ofFloat(mAppView,"translationY",0,100,0,-100,50.0f,-100);
         translationObjectAnimator.setInterpolator(new BounceInterpolator());
         translationObjectAnimator.setDuration(10000);
 //        translationObjectAnimator.start();
         //旋转
-        ObjectAnimator rotationObjectAnimator = ObjectAnimator.ofFloat(mImageView,"rotation",0,150,-90,360,180,-360);
+        ObjectAnimator rotationObjectAnimator = ObjectAnimator.ofFloat(mAppView,"rotation",0,150,-90,360,180,-360);
         rotationObjectAnimator.setDuration(10000);
 //        rotationObjectAnimator.start();
 

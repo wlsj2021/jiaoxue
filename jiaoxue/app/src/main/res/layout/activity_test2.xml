@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CommonlyUsedWebActivity">
+    tools:context=".Test2Activity">
 
- <com.wlsj2021.jiaoxue.weiget.AppView
-     android:id="@+id/app_view"
-     wlsj:appText="101101101123658888"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"/>
+
+    <com.wlsj2021.jiaoxue.weiget.AppView
+        wlsj:appText="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
