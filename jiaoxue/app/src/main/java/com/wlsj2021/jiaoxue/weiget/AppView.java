@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.wlsj2021.jiaoxue.R;
-
+//2步定义view
 public class AppView extends androidx.appcompat.widget.AppCompatImageView {
     private String AppText = "非空";
     private int AppSize;
@@ -26,10 +26,10 @@ public class AppView extends androidx.appcompat.widget.AppCompatImageView {
     public AppView(Context context) {
         super(context,null);
     }
-
+//3在第二个构造写
     public AppView(Context context,  AttributeSet attrs) {
         super(context, attrs,0);
-        //拿到属性
+        //4拿到属性
         @SuppressLint("Recycle") TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.AppView);
         AppText = typedArray.getString(R.styleable.AppView_appText);
         AppSize = typedArray.getDimensionPixelSize(R.styleable.AppView_appSize,100);
@@ -56,7 +56,7 @@ public class AppView extends androidx.appcompat.widget.AppCompatImageView {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-//测量view的大小
+//6测量view的大小
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -91,14 +91,14 @@ public class AppView extends androidx.appcompat.widget.AppCompatImageView {
 
 
 
-//绘制这个view
+//5绘制这个view
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //Canvas 画布
         mPaint = new Paint();
         mPaint.setAlpha(50);
-        mPaint.setColor(Color.YELLOW);
+        mPaint.setColor(AppColor);
         mPaint.setTextSize(AppSize);
 
 //        canvas.drawCircle(getWidth()/2,getHeight()/2,100,mPaint);

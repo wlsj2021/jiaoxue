@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--定义属性-->
 <resources>
     <attr name="appText" format="string"/>
     <attr name="appColor" format="color"/>
