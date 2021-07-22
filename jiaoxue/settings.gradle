@@ -1,3 +1,4 @@
 rootProject.name = "jiaoxue"
 include ':app'
 include ':common'
+include ':lib'
