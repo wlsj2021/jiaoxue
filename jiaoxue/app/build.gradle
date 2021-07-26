@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.wlsj2021.jiaoxue"
-        minSdkVersion 24
+        minSdkVersion 25
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -88,6 +88,13 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.35.1'
     // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.35.1'
+
+//图片加载拖动放大浏览
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+//选择器
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+//    implementation 'com.android.support:percent:25.3.0'
 
 
 }

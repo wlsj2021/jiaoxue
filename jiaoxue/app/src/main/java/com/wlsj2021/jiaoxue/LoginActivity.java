@@ -3,6 +3,7 @@ package com.wlsj2021.jiaoxue;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
@@ -14,4 +15,5 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
-}
+
+    }

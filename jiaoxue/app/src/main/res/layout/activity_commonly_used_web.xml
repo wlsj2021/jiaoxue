@@ -7,8 +7,17 @@
     tools:context=".CommonlyUsedWebActivity">
 
  <com.wlsj2021.jiaoxue.weiget.AppView
+     android:src="@drawable/ic_launcher_background"
      android:id="@+id/app_view"
      wlsj:appText="101101101123658888"
      android:layout_width="match_parent"
      android:layout_height="match_parent"/>
+
+
+<!-- <ImageView-->
+<!--     android:src="@drawable/ic_baseline_bug_report_24"-->
+<!--     android:layout_width="match_parent"-->
+<!--     android:layout_height="match_parent"/>-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

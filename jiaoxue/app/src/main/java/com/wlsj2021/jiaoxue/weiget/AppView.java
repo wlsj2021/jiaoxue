@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -107,4 +108,11 @@ public class AppView extends androidx.appcompat.widget.AppCompatImageView {
         canvas.drawText(AppText,15,18,getWidth()/2,getHeight()/2,mPaint);
 
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+
 }

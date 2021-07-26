@@ -3,6 +3,7 @@ package com.wlsj2021.jiaoxue;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
@@ -15,6 +16,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
@@ -66,6 +68,40 @@ public class CommonlyUsedWebActivity extends RxAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commonly_used_web);
+
+
+        ObjectAnimator objectAnimator = (ObjectAnimator) AnimatorInflater.loadAnimator(this,R.animator.translations_anim);
+        objectAnimator.setTarget(mAppView);
+        objectAnimator.start();
+
+
+//        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation);
+//        animation.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//                Log.e("TAG", "onAnimationStart: ",null );
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                Log.e("TAG", "onAnimationEnd: ",null );
+//
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {
+//                Log.e("TAG", "onAnimationRepeat: ",null );
+//
+//            }
+//        });
+//        mAppView.setAnimation(animation);
+//        animation.start();
+
+
+
+
+
         ButterKnife.bind(this);
 
 //帧动画
